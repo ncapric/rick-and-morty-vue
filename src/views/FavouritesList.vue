@@ -16,17 +16,17 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
-import { useStore } from "vuex";
+import { computed } from "vue"
+import { useStore } from "vuex"
 
-import CharacterCard from "../components/CharacterCard.vue";
+import CharacterCard from "../components/CharacterCard.vue"
 
-const store = useStore();
+const store = useStore()
 
-const favCards = computed(() => store.state.favouritesList);
+const favCards = computed(() => store.state.favouritesList)
 const hasFavourites = computed(() =>
   store.state.favouritesList.length === 0 ? false : true
-);
+)
 </script>
 
 <style scoped>

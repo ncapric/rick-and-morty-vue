@@ -53,47 +53,47 @@
 </template>
 
 <script setup>
-import SearchFilter from "../components/SearchFilter.vue";
-import CharacterCard from "../components/CharacterCard.vue";
-import Loader from "@/components/LoaderComponent.vue";
+import SearchFilter from "../components/SearchFilter.vue"
+import CharacterCard from "../components/CharacterCard.vue"
+import Loader from "@/components/LoaderComponent.vue"
 
-import { useStore } from "vuex";
+import { useStore } from "vuex"
 
-import { ref, computed, watchEffect } from "vue";
-import { useRoute } from "vue-router";
+import { ref, computed, watchEffect } from "vue"
+import { useRoute } from "vue-router"
 
 defineProps({
   page: Number,
   name: String,
   species: String,
-});
+})
 
-const store = useStore();
-const router = useRoute();
+const store = useStore()
+const router = useRoute()
 
-const characterList = computed(() => store.state.characterList);
-const totalNumberOfPages = computed(() => store.state.totalNumberOfPages);
-const isLoading = computed(() => store.state.isLoading);
+const characterList = computed(() => store.state.characterList)
+const totalNumberOfPages = computed(() => store.state.totalNumberOfPages)
+const isLoading = computed(() => store.state.isLoading)
 
-const searchValue = ref("");
+const searchValue = ref("")
 
 watchEffect(async () => {
   store.dispatch("getCards", {
     page: router.query.page,
     name: router.query.name,
     species: router.query.species,
-  });
-});
+  })
+})
 
 function filteredNames(name) {
-  searchValue.value = name;
+  searchValue.value = name
 }
 
 function scrollToTop() {
   window.scrollTo({
     top: 0,
     left: 0,
-  });
+  })
 }
 </script>
 

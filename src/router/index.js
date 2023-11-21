@@ -1,7 +1,7 @@
-import { createRouter, createWebHistory } from "vue-router";
-import CharactersList from "../views/CharactersList.vue";
-import FavouritesList from "../views/FavouritesList.vue";
-import CharacterDetails from "../views/CharacterDetails.vue";
+import { createRouter, createWebHistory } from "vue-router"
+import CharactersList from "../views/CharactersList.vue"
+import FavouritesList from "../views/FavouritesList.vue"
+import CharacterDetails from "../views/CharacterDetails.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,6 +28,6 @@ const router = createRouter({
       component: CharacterDetails,
     },
   ],
-});
+})
 
-export default router;
+export default router

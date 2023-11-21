@@ -5,8 +5,8 @@ const mutationsTypes = {
   SET_CURRENT_CHARACTER_DETAILS: "SET_CURRENT_CHARACTER_DETAILS",
   ADD_TO_FAVOURITES: "ADD_TO_FAVOURITES",
   IS_LOADING: "IS_LOADING",
-};
+}
 
 export default {
   ...mutationsTypes,
-};
+}

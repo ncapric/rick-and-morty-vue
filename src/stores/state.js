@@ -4,4 +4,4 @@ export default {
   isLoading: false,
   currentCharacterDetails: null,
   totalNumberOfPages: null,
-};
+}

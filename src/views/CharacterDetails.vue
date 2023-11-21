@@ -28,46 +28,46 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from "vue";
-import { useRoute } from "vue-router";
-import { useStore } from "vuex";
+import { computed, onMounted } from "vue"
+import { useRoute } from "vue-router"
+import { useStore } from "vuex"
 
-import Loader from "@/components/LoaderComponent.vue";
+import Loader from "@/components/LoaderComponent.vue"
 
-const store = useStore();
-const route = useRoute();
+const store = useStore()
+const route = useRoute()
 
-const isLoading = computed(() => store.state.isLoading);
+const isLoading = computed(() => store.state.isLoading)
 
 onMounted(async () => {
-  await store.dispatch("fetchCurrentCharacter", route.params.id);
-});
+  await store.dispatch("fetchCurrentCharacter", route.params.id)
+})
 
-const character = computed(() => store.state.currentCharacterDetails);
+const character = computed(() => store.state.currentCharacterDetails)
 const isCharaterInFavourites = computed(() =>
   store.getters.favouritesIds.includes(character.value?.id)
-);
+)
 
-const lastLocation = computed(() => character.value?.location.name);
+const lastLocation = computed(() => character.value?.location.name)
 
 const firstEpisode = computed(() => {
-  const last2 = character.value?.episode[0].slice(-2);
+  const last2 = character.value?.episode[0].slice(-2)
 
   if (last2) {
     if (last2[0] === "/") {
-      return Number(last2[1]);
+      return Number(last2[1])
     }
   }
 
-  return Number(last2);
-});
+  return Number(last2)
+})
 
 function addToFavourites() {
-  store.dispatch("addToFavourites", character.value.id);
+  store.dispatch("addToFavourites", character.value.id)
 }
 
 function removeFromFavourites() {
-  store.dispatch("removeFromFavourites", character.value.id);
+  store.dispatch("removeFromFavourites", character.value.id)
 }
 </script>
 

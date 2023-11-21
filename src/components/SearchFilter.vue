@@ -31,21 +31,21 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed } from "vue"
 
-import LinkButtonList from "@/components/LinkButtonList.vue";
+import LinkButtonList from "@/components/LinkButtonList.vue"
 
-const search = ref("");
-const isButtonDisabled = computed(() => search.value.length);
+const search = ref("")
+const isButtonDisabled = computed(() => search.value.length)
 
-const emit = defineEmits(["sendValue"]);
+const emit = defineEmits(["sendValue"])
 
 defineProps({
   species: String,
-});
+})
 
 function sendName() {
-  emit("sendValue", search.value);
+  emit("sendValue", search.value)
 }
 </script>
 

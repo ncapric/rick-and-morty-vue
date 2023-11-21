@@ -30,9 +30,9 @@
 </template>
 
 <script setup>
-import { useStore } from "vuex";
+import { useStore } from "vuex"
 
-const store = useStore();
+const store = useStore()
 
 const props = defineProps({
   name: String,
@@ -41,14 +41,14 @@ const props = defineProps({
   status: String,
   id: Number,
   isFavourite: Boolean,
-});
+})
 
 function addToFavourites() {
-  store.dispatch("addToFavourites", props.id);
+  store.dispatch("addToFavourites", props.id)
 }
 
 function removeFromFavourites() {
-  store.dispatch("removeFromFavourites", props.id);
+  store.dispatch("removeFromFavourites", props.id)
 }
 </script>
 
